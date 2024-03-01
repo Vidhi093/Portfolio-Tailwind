@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./fonts/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .gallery {
+    --s: 24vw; /* control the size */
+    --g: 2vw;  /* control the gap */
+    display: grid;
+    margin: calc(var(--s) + var(--g));
+    place-content: center;
+    
+  }
+  .gallery > label{
+    grid-area: 1/1;
+    aspect-ratio: 0.866;
+    display: flex;
+    clip-path: polygon(0% 25%,0% 75%,50% 100%,100% 75%,100% 25%,50% 0);
+    transform: translate(var(--_x,0),var(--_y,0)) scale(var(--_t,1));
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .2s linear;
+  }
+  .gallery > label > img {
+    width: 100%; /* Ensure the image takes the full width of the <a> tag */
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  .gallery > label:hover {
+    filter: grayscale(0);
+    z-index: 1;
+    --_t: 1.2;
+    
+  }
+  .gallery > label > img:hover {
+    filter: grayscale(0);
+    z-index: 1;
+    --_t: 1.2;
+  }
+  
+  .gallery > label:nth-child(1) {--_x: calc(-100% - var(--g))}
+  .gallery > label:nth-child(7) {--_x: calc( 100% + var(--g))}
+  .gallery > label:nth-child(8) {--_y: calc(-75% - .87*var(--g))}
+  .gallery > label:nth-child(3),
+  .gallery > label:nth-child(5) {--_y: calc(-75% - .87*var(--g))}
+  .gallery > label:nth-child(9) {--_y: calc(75% + .87*var(--g))}
+  .gallery > label:nth-child(4),
+  .gallery > label:nth-child(6) {--_y: calc( 75% + .87*var(--g))}
+  .gallery > label:nth-child(8) {--_x: calc(-154% - var(--g))}
+  .gallery > label:nth-child(3),
+  .gallery > label:nth-child(4) {--_x: calc(-50% - .5*var(--g))}
+  .gallery > label:nth-child(9) {--_x: calc(-154% - var(--g))}
+  .gallery > label:nth-child(5), 
+  .gallery > label:nth-child(6) {--_x: calc( 50% + .5*var(--g))}
+      </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-xs bg-[#1c2334] text-white  md:text-sm select-none">
+    <div id="navbar" class="text-end py-3 hidden pr-5 md:block md:top-0 md:fixed bg-[#181c26] w-[100%] z-10">
+        <a href="#home" class="px-4 py-2 hover:text-[#f1c372]">Home</a>
+        <a href="#about" class="px-4 py-2 hover:text-[#f1c372]">About</a>
+        <a href="#portfolio" class="px-4 py-2 hover:text-[#f1c372]">Portfolio</a>
+        <a href="#contact" class="px-4 py-2 hover:text-[#f1c372]">Contact</a>
+    </div>
+
+    <div class="my-4 mx-3 fixed z-10 cursor-pointer" onclick="openMenu()">
+        <i class="fa fa-bars inline md:hidden lg:hidden mx-2 text-md text-white bg-[#222c44]/45 px-3.5 py-1.5 rounded-md" 
+        aria-hidden="true"></i>
+       </div>
+       <div class="hidden bg-[#181c26] fixed z-20 top-0 h-[100%] pb-11 transition-opacity ease-in-out duration-500" id="menubar">
+        <ul class="divide-y divide-[#1c2334] text-white font-light text-xs space-y-2">
+            <button class="pl-4 pt-2 pr-28" onclick="closeMenu()">Close<i class="fa fa-times mx-2" aria-hidden="true"></i></button>
+            <li class="pl-4 pt-2"><a href="#home" class="py-2 hover:text-[#f1c372]">Home</a></li>
+            <li class="pl-4 pt-2"><a href="#about" class="py-2 hover:text-[#f1c372]">About</a></li>
+            <li class="pl-4 pt-2"><a href="#portfolio" class="py-2 hover:text-[#f1c372]">Portfolio</a></li>
+            <li class="pl-4 pt-2"><a href="#contact" class="py-2 hover:text-[#f1c372]">Contact</a></li>
+        </ul>
+       </div>
+
+    <div id="home" class="pt-10 sm:flex sm:py-24">
+        <img src="./images/self.jpeg" alt="" class="w-28 object-cover rounded-full text-center mx-auto sm:hidden">
+        <img src="./images/self2.jpeg" alt="" class="sm:w-52 sm:rounded-lg hidden sm:inline-block mx-10 md:mx-20">
+        <div class="my-auto">
+            <h1 class="text-xl mx-5">~ I'm <span class="text-[#f1c372]">Vidhi</span> Patel</h1>
+            <p class="mx-6 my-2 leading-relaxed">I'm a dedicated and skilled individual adept at in
+                front-end technologies such as HTML, CSS, Tailwind CSS, as well as back-end
+                technologies including SQL and Java (JDBC, Hibernate, Servlet).</p>
+        </div>
+
+    </div>
+    <div id="about" class="bg-[#181c26]">
+        <div class="text-center my-4 md:mb-8 mx-auto">
+            <h1 class="text-lg md:text-2xl tracking-widest font-semibold uppercase">About <span
+                    class="text-[#f1c372]">me</span></h1>
+        </div>
+        <div class="mx-auto text-center md:flex flex-wrap justify-center">
+            <div class="text-center md:text-left px-5 md:w-[45%] leading-relaxed">
+                <h1 class="text-lg text-center mb-3">Personal Details</h1>
+                <p>Birthdate : 09-02-2003</span></p>
+                <p>Phone : +91 8999325568</p>
+                <p>Email : vidhip996@gmail.com</p>
+                <a href="Resume-updated.pdf" download="Resume.pdf" 
+                class="border rounded-full pl-5 my-3 inline-block border-[#f1c372] ">
+                    <button id="moreabout">Download CV
+                        <i class="fa fa-download rounded-full border border-[#f1c372] py-3 px-3 ml-2 bg-[#f1c372]" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+            <div class="text-center md:text-left px-5 md:w-[45%]">
+                <h1 class="text-lg text-center mb-3">My Interest</h1>
+                <div class="inline-block sm:flex flex-wrap justify-center ">
+                    <p class="text-center mx-2 px-3 py-1 rounded-md bg-[#1c2334] my-2 inline-block"><i class="fa fa-headphones" aria-hidden="true"></i> <br>Music</p>
+                    <p class="text-center mx-2 px-3 py-1 rounded-md bg-[#1c2334] my-2 inline-block"><i class="fa fa-plane" aria-hidden="true"></i> <br>Travel</p>
+                    <p class="text-center mx-1 px-3 py-1 rounded-md bg-[#1c2334] my-2 inline-block"><i class="fa fa-film" aria-hidden="true"></i><br>Cinema</p>
+                    <p class="text-center mx-2 px-3 py-1 rounded-md bg-[#1c2334] my-2 inline-block"><i class="fa fa-book" aria-hidden="true"></i><br>Novel</p>
+                </div>
+            </div>
+            <div class="text-center md:text-center px-0 md:w-[45%]">
+                <h1 class="text-lg text-center my-3 m">Skills</h1>
+                <div class="capitalize sm:flex flex-wrap justify-center ">
+                    <div class="sm:mx-4 md:mx-6 md:text-xs text-center">
+                        <h1 class="capitalize text-sm my-2 text-[#f1c372]">Front-End</h1>
+                        <p class="uppercase">html</p>
+                        <p class="uppercase">css</p>
+                        <p>tailwind <span class="uppercase">css</span></p>
+                    </div>
+                    <div class="leading-relaxed  md:mx-6  md:text-xs text-center">
+                        <h1 class="capitalize text-sm my-2 text-[#f1c372]">Back-End</h1>
+                        <p>core java</p>
+                        <p class="uppercase">jdbc</p>
+                        <p>hibernate</p>
+                        <p>servlet</p>
+                    </div>
+                    <div class="leading-relaxed sm:mx-4 md:text-xs text-center">
+                        <h1 class="capitalize text-sm my-2 text-[#f1c372]">Database</h1>
+                        <p class="uppercase">sql</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-xs text-center md:text-left px-3 md:w-[45%]">
+                <h1 class="text-lg text-center my-3">Education</h1>
+                <p class="my-5 leading-loose"><span class="border px-2 py-1 rounded-lg mr-2 bg-[#1c2334] text-[#f1c372]">2020-23</span> BCA - S.N.D.T UNIVERSITY</p>
+                <p class="my-5 leading-loose"><span class="border px-2 py-1 rounded-lg mr-2  bg-[#1c2334] text-[#f1c372]">2019-20</span> HSC - SHETH VIDYA MANDIR JUNIOR COLLEGE</p>
+                <p class="my-5 leading-loose"><span class="border px-2 py-1 rounded-lg mr-2 bg-[#1c2334] text-[#f1c372]">2017-18</span>SSC - SHETH VIDYA MANDIR HIGH SCHOOL</p>
+            </div>
+        </div>
+
+    </div>
+    <div id="portfolio">
+        <div class="text-center my-4 mx-auto">
+            <h1 class="text-lg md:text-2xl tracking-widest font-semibold uppercase">Projects</h1>
+        </div>
+        <div class="gallery mx-auto pl-11">
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/gms.jpg" alt="grocery system" data-destination="Grocery-Shop-JDBC">
+            </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/tms.jpg" alt="travel system" data-destination="Travel-Management-System">
+            </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/lms.jpg" alt="library system" data-destination="Library-Management-System-Core-Java">
+             </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/alpha.png" alt="webpage alpha" data-destination="tailwind-alpha">
+            </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/lens.png" alt="webpage lens" data-destination="Lens-Clone">
+            </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/urs.jpg" alt="user registration" data-destination="user-registration-system">
+            </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/ems.jpg" alt="employee system" data-destination="Employee-Management-System">
+            </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/forty.png" alt="webpage forty" data-destination="Forty">
+            </label>
+            <label class="w-[3rem] h-[3rem] md:w-[10rem] md:h-[12rem] sm:w-[6rem] sm:h-[7rem]">
+                <img src="./resources/portfolio.jpg" alt="portfolio" data-destination="Portfolio-tailwind">
+            </label>
+          </div>
+          
+    </div>
+    <div id="contact">
+
+    </div>
+
+    <script>
+        function openMenu(){
+            document.getElementById("menubar").style.display = "block";
+        }
+        function closeMenu(){
+            document.getElementById("menubar").style.display = "none";
+        }
+
+        var imageElements = document.querySelectorAll("img[data-destination]");
+
+    // Add click event listeners to each image
+    imageElements.forEach(function (image) {
+      image.addEventListener("click", function() {
+        // Get the value of the data-destination attribute
+        var destinationValue = image.getAttribute("data-destination");
+
+        // Construct the destination URL using the value
+        var destinationURL = "https://github.com/Vidhi093/" + destinationValue;
+
+        // Redirect the user to the specified URL
+        window.location.href = destinationURL;
+      });
+    });
+    </script>
+</body>
+</html>
