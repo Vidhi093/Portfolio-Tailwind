@@ -67,7 +67,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-[#1c2334] text-white  md:text-sm select-none">
+<body class="bg-[#1c2334] text-white md:text-sm select-none">
     <div id="navbar" class="text-end py-3 hidden pr-5 md:block md:top-0 md:fixed bg-[#181c26] w-[100%] z-10">
         <a href="#home" class="px-4 py-2 hover:text-[#f1c372]">Home</a>
         <a href="#about" class="px-4 py-2 hover:text-[#f1c372]">About</a>
@@ -76,11 +76,11 @@
     </div>
 
     <div class="my-4 mx-3 fixed z-10 cursor-pointer" onclick="openMenu()">
-        <i class="fa fa-bars inline md:hidden lg:hidden mx-2 text-md text-white bg-[#222c44]/45 px-3.5 py-1.5 rounded-md" 
+        <i class="fa fa-bars inline md:hidden lg:hidden mx-2 text-xl text-white bg-[#222c44]/45 px-3.5 py-1.5 rounded-md" 
         aria-hidden="true"></i>
        </div>
        <div class="hidden bg-[#181c26] fixed z-20 top-0 h-[100%] pb-11 transition-opacity ease-in-out duration-500" id="menubar">
-        <ul class="divide-y divide-[#1c2334] text-white font-light text-xs space-y-2">
+        <ul class="divide-y divide-[#1c2334] text-white font-light text-base space-y-2">
             <button class="pl-4 pt-2 pr-28" onclick="closeMenu()">Close<i class="fa fa-times mx-2" aria-hidden="true"></i></button>
             <li class="pl-4 pt-2"><a href="#home" class="py-2 hover:text-[#f1c372]">Home</a></li>
             <li class="pl-4 pt-2"><a href="#about" class="py-2 hover:text-[#f1c372]">About</a></li>
@@ -89,25 +89,26 @@
         </ul>
        </div>
 
-    <div id="home" class="pt-10 sm:flex sm:py-24">
-        <img src="./images/self.jpeg" alt="" class="w-28 object-cover rounded-full text-center mx-auto sm:hidden">
-        <img src="./images/self2.jpeg" alt="" class="sm:w-52 sm:rounded-lg hidden sm:inline-block mx-10 md:mx-20">
-        <div class="my-auto">
-            <h1 class="text-xl mx-5">~ I'm <span class="text-[#f1c372]">Vidhi</span> Patel</h1>
-            <p class="mx-6 my-2 leading-relaxed">I'm a dedicated and skilled individual adept at in
-                front-end technologies such as HTML, CSS, Tailwind CSS, as well as back-end
-                technologies including SQL and Java (JDBC, Hibernate, Servlet).</p>
+    <div id="home" class="pt-10 pb-10 sm:flex sm:pt-24 sm:pb-12 bg-[100%] bg-cover bg-fixed " style="background-image: url('./images/bg.png');">
+        <img src="./images/self2.png" alt="" class="w-36 object-cover rounded-full mx-auto mb-7 sm:hidden">
+        <img src="./images/self3.com_s_8RYb1p" alt="" class="sm:w-48 rounded-lg hidden md:w-52 sm:inline-block mx-10 md:mx-16">
+        <div class="my-auto mx-auto">
+            <h1 class="text-xl text-center md:text-left md:mx-5 ">~ I'm <span class="text-[#f1c372]">Vidhi</span> Patel</h1>
+            <p class="mx-6 text-center md:text-left leading-relaxed">I am a passionate and determined 
+                individual with a passion for creating innovative and efficient solutions. 
+                Problem-solver with a passion for creating user-friendly web and software solutions.
+                 Have a strong background in programming languages </p>
         </div>
-
     </div>
-    <div id="about" class="bg-[#181c26]">
-        <div class="text-center my-4 md:mb-8 mx-auto">
+
+    <div id="about" class="bg-[#181c26] pb-5 md:pb-10">
+        <div class="text-center pt-11 md:mb-8 mx-auto">
             <h1 class="text-lg md:text-2xl tracking-widest font-semibold uppercase">About <span
                     class="text-[#f1c372]">me</span></h1>
         </div>
         <div class="mx-auto text-center md:flex flex-wrap justify-center">
             <div class="text-center md:text-left px-5 md:w-[45%] leading-relaxed">
-                <h1 class="text-lg text-center mb-3">Personal Details</h1>
+                <h1 class="text-lg text-center md:text-left mb-3">Personal Details</h1>
                 <p>Birthdate : 09-02-2003</span></p>
                 <p>Phone : +91 8999325568</p>
                 <p>Email : vidhip996@gmail.com</p>
@@ -221,6 +222,19 @@
         window.location.href = destinationURL;
       });
     });
+
+    var prevScrollpos = window.pageYOffset;
+    var navbar = document.getElementById("navbar");
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        navbar.style.top = "0";
+    } else {
+        navbar.style.top = "-60px";
+    }
+    navbar.style.transition = "top 0.5s ease-in-out";
+    prevScrollpos = currentScrollPos;
+    }
     </script>
 </body>
 </html>
