@@ -234,20 +234,20 @@
     imageElements.forEach(function (image) {
       image.addEventListener("click", function() {
         // Get the value of the data-destination attribute
-        var destinationValue = image.getAttribute("data-destination");
+        let destinationValue = image.getAttribute("data-destination");
 
         // Construct the destination URL using the value
-        var destinationURL = "https://github.com/Vidhi093/" + destinationValue;
+        let destinationURL = "https://github.com/Vidhi093/" + destinationValue;
 
         // Redirect the user to the specified URL
         window.location.href = destinationURL;
       });
     });
 
-    var prevScrollpos = window.pageYOffset;
-    var navbar = document.getElementById("navbar");
+    let prevScrollpos = window.pageYOffset;
+    let navbar = document.getElementById("navbar");
     window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
+    let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         navbar.style.top = "0";
     } else {
